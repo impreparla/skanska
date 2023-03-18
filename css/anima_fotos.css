@@ -1,0 +1,45 @@
+@keyframes animaInfo {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 0.6;
+        transform: scale(1.2);
+    }
+}
+.animarFoto{
+    overflow: hidden;
+    position: relative;
+   /* ;
+    z-index:1; */
+    border-radius: 10px;
+}
+
+.animarFoto img{
+    width: 100%;
+    height: auto;
+    transform: scale(1.05); /*aumento la escala para que encaje totalmente dentro del padre.*/
+    transition: all 0.4s;
+}
+
+.animarFoto:hover img{
+    transform: scale(1.2) rotate(-5deg);
+
+}
+
+.animarFoto:hover a::before{
+    content: url('../imagenes/icon-info.svg');
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: calc(50% - 40px);
+    left: calc(50% - 40px);
+    z-index: 1;
+    filter: drop-shadow(2px 2px 7px rgba(0, 0, 0, 0.6));
+    animation: animaInfo 0.3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+
+}
